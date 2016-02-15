@@ -32,10 +32,15 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\script_loadCardData.gml</script>
-    <script>scripts\script_addListener.gml</script>
     <script>scripts\script_initGame.gml</script>
-    <script>scripts\script_fireEvent.gml</script>
-    <script>scripts\script_removeListener.gml</script>
+    <scripts name="Events">
+      <script>scripts\script_eventMessage.gml</script>
+    </scripts>
+    <scripts name="Listeners">
+      <script>scripts\script_addListener.gml</script>
+      <script>scripts\script_removeListener.gml</script>
+      <script>scripts\script_fireEvent.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <object>objects\control_timer</object>
@@ -43,6 +48,8 @@
     <object>objects\obj_cardParent</object>
     <object>objects\obj_deckParent</object>
     <object>objects\obj_stackParent</object>
+    <object>objects\obj_mouseWatcher</object>
+    <object>objects\obj_messager</object>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\timeline_splashScreen</timeline>

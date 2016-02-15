@@ -8,39 +8,7 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="0" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>305</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_timeline_set</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>14</kind>
-            <timeline>timeline_splashScreen</timeline>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
-          </argument>
-          <argument>
-            <kind>4</kind>
-            <string>0</string>
-          </argument>
-          <argument>
-            <kind>4</kind>
-            <string>0</string>
-          </argument>
-        </arguments>
-      </action>
+    <event eventtype="6" enumb="53">
       <action>
         <libid>1</libid>
         <id>601</id>
@@ -57,19 +25,19 @@
         <arguments>
           <argument>
             <kind>9</kind>
-            <script>script_initGame</script>
+            <script>script_fireEvent</script>
           </argument>
           <argument>
             <kind>0</kind>
-            <string></string>
+            <string>"mouseDown"</string>
           </argument>
           <argument>
             <kind>0</kind>
-            <string></string>
+            <string>mouse_x</string>
           </argument>
           <argument>
             <kind>0</kind>
-            <string></string>
+            <string>mouse_y</string>
           </argument>
           <argument>
             <kind>0</kind>
@@ -80,22 +48,6 @@
             <string></string>
           </argument>
         </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="1">
-      <action>
-        <libid>1</libid>
-        <id>222</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_next_room</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
       </action>
     </event>
   </events>
