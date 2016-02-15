@@ -38,6 +38,10 @@
   </scripts>
   <objects name="objects">
     <object>objects\control_timer</object>
+    <object>objects\obj_abilityParent</object>
+    <object>objects\obj_cardParent</object>
+    <object>objects\obj_deckParent</object>
+    <object>objects\obj_stackParent</object>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\timeline_splashScreen</timeline>
