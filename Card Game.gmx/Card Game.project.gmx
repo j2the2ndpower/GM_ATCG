@@ -11,16 +11,23 @@
     <background>background\background1</background>
   </backgrounds>
   <paths name="paths"/>
-  <scripts name="scripts"/>
+  <scripts name="scripts">
+    <script>scripts\script1.gml</script>
+  </scripts>
   <objects name="objects">
     <object>objects\control_timer</object>
+    <object>objects\obj_cardParent</object>
+    <object>objects\obj_stackParent</object>
+    <object>objects\obj_deckParent</object>
+    <object>objects\obj_abilityParent</object>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\timeline_splashScreen</timeline>
   </timelines>
   <rooms name="rooms">
     <room>rooms\room_splashScreen</room>
-    <room>rooms\room1</room>
+    <room>rooms\room_menu</room>
+    <room>rooms\room_cardTable</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
