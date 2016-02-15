@@ -35,6 +35,7 @@
     <script>scripts\script_addListener.gml</script>
     <script>scripts\script_initGame.gml</script>
     <script>scripts\script_fireEvent.gml</script>
+    <script>scripts\script_removeListener.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\control_timer</object>
