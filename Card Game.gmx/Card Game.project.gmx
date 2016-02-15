@@ -41,6 +41,7 @@
       <script>scripts\script_removeListener.gml</script>
       <script>scripts\script_fireEvent.gml</script>
     </scripts>
+    <script>scripts\script_loadCard.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\control_timer</object>

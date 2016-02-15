@@ -1,7 +1,28 @@
 {
-    "cards": [
-        {
-            "name": "Test Card"
+    "cards": {
+        "0": {
+            "cardName": "Sample Card",
+            "cardType": "Sample Type",
+            "castCost": 1,
+            "experience": 0,
+            "level": 0,
+            "hpMax": 2,
+            "hpCurrent": 2,
+            "attack": 1,
+            "armor": 1,
+            "sprite": "sprite_SampleCard"
+        },
+        "1": {
+            "cardName": "Sample Card2",
+            "cardType": "Sample Type",
+            "castCost": 1,
+            "experience": 0,
+            "level": 0,
+            "hpMax": 2,
+            "hpCurrent": 2,
+            "attack": 1,
+            "armor": 1,
+            "sprite": "sprite_SampleCard"
         }
-    ]
+    }
 }
