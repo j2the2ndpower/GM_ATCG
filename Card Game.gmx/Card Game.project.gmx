@@ -48,7 +48,8 @@
   </timelines>
   <rooms name="rooms">
     <room>rooms\room_splashScreen</room>
-    <room>rooms\room1</room>
+    <room>rooms\room_menu</room>
+    <room>rooms\room_cardTable</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
