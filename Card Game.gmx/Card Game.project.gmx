@@ -3,7 +3,7 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="1" name="datafiles">
+  <datafiles number="2" name="datafiles">
     <datafile>
       <name>cards.json</name>
       <exists>-1</exists>
@@ -22,7 +22,9 @@
       <filename>cards.json</filename>
     </datafile>
   </datafiles>
-  <NewExtensions/>
+  <NewExtensions>
+    <extension index="0">extensions\extSocketIO</extension>
+  </NewExtensions>
   <sounds name="sound"/>
   <sprites name="sprites"/>
   <backgrounds name="background">
@@ -51,6 +53,7 @@
     <object>objects\obj_stackParent</object>
     <object>objects\obj_mouseWatcher</object>
     <object>objects\obj_messager</object>
+    <object>objects\obj_network</object>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\timeline_splashScreen</timeline>
