@@ -116,7 +116,10 @@ if (global.connecting) {
     netString = "Connected!";
 }
 
-draw_text_colour(40, 40, netString, 200, 200, 200, 0, 255);
+draw_set_font(fntDefault);
+draw_set_halign(fa_left);
+draw_set_valign(fa_top);
+draw_text_colour(40, display_get_height() - 40, netString, c_white, c_white, c_white, c_white, 255);
 
 </string>
           </argument>

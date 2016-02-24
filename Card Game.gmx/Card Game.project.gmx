@@ -24,10 +24,18 @@
   </datafiles>
   <NewExtensions/>
   <sounds name="sound"/>
-  <sprites name="sprites"/>
+  <sprites name="sprites">
+    <sprites name="Menu">
+      <sprite>sprites\sprite_smoke</sprite>
+      <sprite>sprites\sprite_logo</sprite>
+      <sprite>sprites\sprite_select</sprite>
+    </sprites>
+    <sprite>sprites\sprite_blank</sprite>
+    <sprite>sprites\sprite_flame</sprite>
+  </sprites>
   <backgrounds name="background">
-    <background>background\background0</background>
-    <background>background\background1</background>
+    <background>background\bgClouds</background>
+    <background>background\bgSplash</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -46,16 +54,40 @@
       <script>scripts\script_sendMsg.gml</script>
       <script>scripts\script_connect.gml</script>
     </scripts>
+    <script>scripts\script_exitGame.gml</script>
   </scripts>
+  <fonts name="fonts">
+    <font>fonts\fntMenuItem</font>
+    <font>fonts\fntDefault</font>
+  </fonts>
   <objects name="objects">
-    <object>objects\control_timer</object>
     <object>objects\obj_abilityParent</object>
     <object>objects\obj_cardParent</object>
     <object>objects\obj_deckParent</object>
     <object>objects\obj_stackParent</object>
-    <object>objects\obj_mouseWatcher</object>
-    <object>objects\obj_messager</object>
     <object>objects\obj_network</object>
+    <objects name="Menu">
+      <object>objects\objControl</object>
+      <object>objects\objSmoke</object>
+      <object>objects\objLogo</object>
+      <object>objects\objSelSprite</object>
+      <object>objects\objSelSpriteMid</object>
+      <object>objects\objMenuItem</object>
+      <objects name="Items">
+        <object>objects\objMenuPlay</object>
+        <object>objects\objMenuCollection</object>
+        <object>objects\objMenuShop</object>
+        <object>objects\objMenuOptions</object>
+        <object>objects\objMenuExit</object>
+      </objects>
+    </objects>
+    <objects name="Splash">
+      <object>objects\control_timer</object>
+    </objects>
+    <objects name="Sample">
+      <object>objects\obj_messager</object>
+      <object>objects\obj_mouseWatcher</object>
+    </objects>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\timeline_splashScreen</timeline>
