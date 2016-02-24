@@ -38,9 +38,9 @@ var cardId = "0";
 // armor
 // sprite
 var cardData = script_loadCard(cardId);
-if (ds_map_exists(cardData, "cardName")) {
+/*if (ds_map_exists(cardData, "cardName")) {
     show_message("Card Loaded: " + cardData[? "cardName"]);
-}
+}*/
 
 // location
 // inPlay = true/false

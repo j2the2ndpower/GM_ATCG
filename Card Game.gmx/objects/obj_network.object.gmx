@@ -11,6 +11,48 @@
     <event eventtype="0" enumb="0">
       <action>
         <libid>1</libid>
+        <id>601</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_execute_script</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>9</kind>
+            <script>script_connect</script>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="68">
+      <action>
+        <libid>1</libid>
         <id>603</id>
         <kind>7</kind>
         <userelative>0</userelative>
@@ -25,38 +67,58 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*global.client = network_create_socket(network_socket_tcp);
-var success = network_connect_raw(global.client, network_resolve("pounce.house"), 4050);
-if (success == 0) {
-    var buff = buffer_create(1, buffer_grow, 1);
-    buffer_fill(buff, 0, buffer_u8, 0, 1);
-    network_send_packet(global.client, buff, buffer_get_size(buff));
-}*/
-global.socket = io_connect("http://pounce.house:4050/");
+            <string>var msgType = async_load[? "type"];
+var msgId = async_load[? "id"];
+var msgIP = async_load[? "ip"];
+var msgPort = async_load[? "port"];
 
+if (msgType == network_type_non_blocking_connect || 
+    msgType == network_type_connect) {
+    var msgSuccess = async_load[? "succeeded"];
+    var msgSocket = async_load[? "socket"];
+    
+    global.connected = async_load[? "succeeded"];
+    global.connecting = !global.connected;
+} else if (msgType == network_type_disconnect) {
+    global.connected = 0;
+} else if (msgType == network_type_data) {
+    var msgBuffer = async_load[? "buffer"];
+    var msgSize = async_load[? "size"];
+    //show_message("Network Type: " + string(async_load[? "type"]));
+}
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="7" enumb="68">
+    <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
-        <id>321</id>
-        <kind>0</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_message</functionname>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>2</kind>
-            <string>Got Networking data</string>
+            <kind>1</kind>
+            <string>var netString = "";
+
+if (global.connecting) {
+    netString = "Connecting...";
+} else if (global.connected) {
+    netString = "Connected!";
+}
+
+draw_text_colour(40, 40, netString, 200, 200, 200, 0, 255);
+
+</string>
           </argument>
         </arguments>
       </action>

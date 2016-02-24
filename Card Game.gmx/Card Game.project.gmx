@@ -22,9 +22,7 @@
       <filename>cards.json</filename>
     </datafile>
   </datafiles>
-  <NewExtensions>
-    <extension index="0">extensions\extSocketIO</extension>
-  </NewExtensions>
+  <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites"/>
   <backgrounds name="background">
@@ -44,6 +42,10 @@
       <script>scripts\script_fireEvent.gml</script>
     </scripts>
     <script>scripts\script_loadCard.gml</script>
+    <scripts name="Net">
+      <script>scripts\script_sendMsg.gml</script>
+      <script>scripts\script_connect.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <object>objects\control_timer</object>
