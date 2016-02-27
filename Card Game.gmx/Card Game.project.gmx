@@ -32,10 +32,13 @@
     </sprites>
     <sprite>sprites\sprite_blank</sprite>
     <sprite>sprites\sprite_flame</sprite>
+    <sprites name="Splash">
+      <sprite>sprites\sprite_angryLogo</sprite>
+      <sprite>sprites\sprite_angryLogoText</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bgClouds</background>
-    <background>background\bgSplash</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -82,18 +85,15 @@
       </objects>
     </objects>
     <objects name="Splash">
-      <object>objects\control_timer</object>
+      <object>objects\obj_angryLogo</object>
     </objects>
     <objects name="Sample">
       <object>objects\obj_messager</object>
       <object>objects\obj_mouseWatcher</object>
     </objects>
   </objects>
-  <timelines name="timelines">
-    <timeline>timelines\timeline_splashScreen</timeline>
-  </timelines>
   <rooms name="rooms">
-    <room>rooms\room_splashScreen</room>
+    <room>rooms\room_splash</room>
     <room>rooms\room_menu</room>
     <room>rooms\room_cardTable</room>
   </rooms>
