@@ -1,0 +1,4 @@
+User = function() {
+};
+
+User.prototype.
