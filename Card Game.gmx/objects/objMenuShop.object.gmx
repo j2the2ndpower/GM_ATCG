@@ -2,7 +2,7 @@
 <object>
   <spriteName>sprite_blank</spriteName>
   <solid>0</solid>
-  <visible>-1</visible>
+  <visible>0</visible>
   <depth>-1000</depth>
   <persistent>0</persistent>
   <parentName>objMenuItem</parentName>

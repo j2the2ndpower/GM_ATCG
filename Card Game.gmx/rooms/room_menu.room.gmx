@@ -53,12 +53,13 @@
   <instances>
     <instance objName="objControl" x="32" y="32" name="inst_6126079E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSmoke" x="0" y="-800" name="inst_FD86D7F0" locked="0" code="x = 0;&#xA;y = 0;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objLogo" x="990" y="300" name="inst_29675DAB" locked="0" code="" scaleX="1" scaleY="1" colour="16777215" rotation="0"/>
+    <instance objName="objLogo" x="960" y="300" name="inst_29675DAB" locked="0" code="" scaleX="1" scaleY="1" colour="16777215" rotation="0"/>
     <instance objName="objMenuPlay" x="810" y="500" name="inst_D9ACD4B4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMenuCollection" x="810" y="560" name="inst_B67CAF52" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMenuShop" x="810" y="620" name="inst_CAC978D2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMenuOptions" x="810" y="680" name="inst_60F262DA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objMenuExit" x="810" y="740" name="inst_8701648F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objLoginForm" x="384" y="224" name="inst_5E4DB6D8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

@@ -23,22 +23,34 @@
     </datafile>
   </datafiles>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\sound_chicken</sound>
+    <sound>sound\sound3</sound>
+    <sound>sound\sound2</sound>
+  </sounds>
   <sprites name="sprites">
+    <sprite>sprites\sprite_blank</sprite>
     <sprites name="Menu">
       <sprite>sprites\sprite_smoke</sprite>
       <sprite>sprites\sprite_logo</sprite>
       <sprite>sprites\sprite_select</sprite>
+      <sprite>sprites\sprite_loginButton</sprite>
+      <sprite>sprites\sprite_exitButton</sprite>
+      <sprite>sprites\sprite_flame</sprite>
     </sprites>
-    <sprite>sprites\sprite_blank</sprite>
-    <sprite>sprites\sprite_flame</sprite>
     <sprites name="Splash">
       <sprite>sprites\sprite_angryLogo</sprite>
       <sprite>sprites\sprite_angryLogoText</sprite>
     </sprites>
+    <sprites name="UI">
+      <sprite>sprites\sprite_dialogWindow</sprite>
+      <sprite>sprites\sprite_dialogTitle</sprite>
+      <sprite>sprites\sprite_closeButton</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bgClouds</background>
+    <background>background\bgField</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -56,19 +68,26 @@
     <scripts name="Net">
       <script>scripts\script_sendMsg.gml</script>
       <script>scripts\script_connect.gml</script>
+      <script>scripts\script_getMsg.gml</script>
+      <script>scripts\script_connected.gml</script>
+      <script>scripts\script_handleLogin.gml</script>
     </scripts>
     <script>scripts\script_exitGame.gml</script>
+    <script>scripts\script_setFocus.gml</script>
+    <script>scripts\script_getFocus.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fntMenuItem</font>
     <font>fonts\fntDefault</font>
+    <font>fonts\fntDialogTitle</font>
+    <font>fonts\fntDefaultTextBox</font>
+    <font>fonts\fntLoginText</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_abilityParent</object>
     <object>objects\obj_cardParent</object>
     <object>objects\obj_deckParent</object>
     <object>objects\obj_stackParent</object>
-    <object>objects\obj_network</object>
     <objects name="Menu">
       <object>objects\objControl</object>
       <object>objects\objSmoke</object>
@@ -83,6 +102,9 @@
         <object>objects\objMenuOptions</object>
         <object>objects\objMenuExit</object>
       </objects>
+      <object>objects\objLoginForm</object>
+      <object>objects\obj_loginButton</object>
+      <object>objects\obj_exitButton</object>
     </objects>
     <objects name="Splash">
       <object>objects\obj_angryLogo</object>
@@ -91,12 +113,29 @@
       <object>objects\obj_messager</object>
       <object>objects\obj_mouseWatcher</object>
     </objects>
+    <objects name="Global">
+      <object>objects\obj_network</object>
+      <objects name="UI">
+        <object>objects\obj_Dialog</object>
+        <object>objects\obj_button</object>
+        <object>objects\obj_dialogCloseButton</object>
+        <object>objects\obj_textBox</object>
+      </objects>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_splash</room>
     <room>rooms\room_menu</room>
     <room>rooms\room_cardTable</room>
   </rooms>
+  <constants number="6">
+    <constant name="nm_connect">1</constant>
+    <constant name="nm_login">2</constant>
+    <constant name="nm_play">3</constant>
+    <constant name="nm_param_string">1</constant>
+    <constant name="nm_param_int32">2</constant>
+    <constant name="nm_param_float">3</constant>
+  </constants>
   <help>
     <rtf>help.rtf</rtf>
   </help>

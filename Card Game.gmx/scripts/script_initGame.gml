@@ -15,4 +15,6 @@ network_set_config(network_config_connect_timeout, 1000);
 //GUI
 window_set_rectangle(0, 0, display_get_width(), display_get_height());
 display_set_gui_size(display_get_width(), display_get_height());
+global.uiFocus = noone;
+
 

@@ -9,8 +9,14 @@ if (!global.connected) {
     global.connecting = true;
     var failure = network_connect_raw(global.client, network_resolve(global.serverHost), global.serverPort);
     
-    if (!failure) {
-        global.connected = true;
+    if (failure == 0) {
+        //global.connected = true;
+        var mapTest = ds_map_create();
+        /*ds_map_add(mapTest, "tester1", "stringTest");
+        ds_map_add(mapTest, "test2", 123);
+        ds_map_add(mapTest, "t3", 32.14);
+        ds_map_add(mapTest, "test4", true);*/
+        
+        script_sendMsg(nm_connect, mapTest);
     }
-    global.connecting = !global.connected;
 }
