@@ -1,23 +1,29 @@
+var mongo = require('mongodb').MongoClient;
+var db = undefined;
+var ObjectId = require('mongodb').ObjectID;
 var net = require('net');
+var Message = require('./net/Message.js');
+var Auth = require('./auth/Auth.js');
+var Router = require('./net/Router.js')(Auth);
 
 var HOST = 'pounce.house';
 var PORT = 4050;
 
-// Create a server instance, and chain the listen function to it
-// The function passed to net.createServer() becomes the event handler for the 'connection' event
-// The sock object the callback function receives UNIQUE for each connection
+mongo.connect('mongodb://localhost:27017/aether', function(err, conn) {
+    if (!err) {
+        db = conn;
+        console.log("Server connected to DB.");
+    }
+    
+});
+
 net.createServer(function(sock) {
-    
-    // We have a connection - a socket object is assigned to the connection automatically
     console.log('CONNECTED: ' + sock.remoteAddress +':'+ sock.remotePort);
-    
-    // Add a 'data' event handler to this instance of socket
+
     sock.on('data', function(data) {
-        
-        console.log('DATA ' + sock.remoteAddress + ': ' + data);
-        // Write the data back to the socket, the client will receive it as data from the server
-        //sock.write('You said "' + data + '"');
-        
+        msg = Message.read(data); 
+        console.log('RECEIVED: ');
+        Router.process(sock, msg);
     });
     
     // Add a 'close' event handler to this instance of socket
@@ -44,8 +50,6 @@ net.createServer(function(sock) {
     sock.on('error', function(data) {
         console.log('ERROR: ' + data);
     });
-
-//    sock.write("GM:Studio-Connect");
 }).listen(PORT, HOST);
 
 console.log('Server listening on ' + HOST +':'+ PORT);
