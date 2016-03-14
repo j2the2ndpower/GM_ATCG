@@ -99,7 +99,11 @@ with (selSpriteM) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>highlighted=false;
+            <string>if (!visible) {
+    exit;
+}
+
+highlighted=false;
 selSpriteL.visible=false;
 selSpriteR.visible=false;
 selSpriteM.visible = false;
@@ -125,7 +129,11 @@ selSpriteM.visible = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>highlighted = true;
+            <string>if (!visible) {
+    exit;
+}
+
+highlighted = true;
 selSpriteL.visible = true;
 selSpriteR.visible = true;
 selSpriteM.visible = true;
@@ -152,6 +160,10 @@ selSpriteM.visible = true;
           <argument>
             <kind>1</kind>
             <string>var cTop = colorTop, cBottom = colorBottom;
+
+if (!visible) {
+    exit;
+}
 
 if (highlighted) {
     cTop = colorTopH;
