@@ -54,7 +54,7 @@ var msgId = async_load[? "id"];
 var msgIP = async_load[? "ip"];
 var msgPort = async_load[? "port"];
 
-if (msgType == network_type_data) {
+    if (msgType == network_type_data) {
     var msgBuffer = async_load[? "buffer"];
     var msgSize = async_load[? "size"];
     script_getMsg(msgBuffer, msgSize);

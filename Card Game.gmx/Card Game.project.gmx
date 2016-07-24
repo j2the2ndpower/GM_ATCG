@@ -75,6 +75,7 @@
     <script>scripts\script_exitGame.gml</script>
     <script>scripts\script_setFocus.gml</script>
     <script>scripts\script_getFocus.gml</script>
+    <script>scripts\script_testClicked.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fntMenuItem</font>
@@ -122,13 +123,15 @@
         <object>objects\obj_textBox</object>
       </objects>
     </objects>
+    <object>objects\testObject</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_splash</room>
     <room>rooms\room_menu</room>
     <room>rooms\room_cardTable</room>
   </rooms>
-  <constants number="6">
+  <constants number="7">
+    <constant name="nm_test">300</constant>
     <constant name="nm_connect">1</constant>
     <constant name="nm_login">2</constant>
     <constant name="nm_play">3</constant>
