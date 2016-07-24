@@ -3,8 +3,7 @@ var db = undefined;
 var ObjectId = require('mongodb').ObjectID;
 var net = require('net');
 var Message = require('./net/Message.js');
-var Auth = require('./auth/Auth.js');
-var Router = require('./net/Router.js')(Auth);
+var Auth = null, Router = null; 
 
 var HOST = 'pounce.house';
 var PORT = 4050;
@@ -12,6 +11,8 @@ var PORT = 4050;
 mongo.connect('mongodb://localhost:27017/aether', function(err, conn) {
     if (!err) {
         db = conn;
+        Auth = require('./auth/Auth.js')(db);
+        Router = require('./net/Router.js')(Auth);
         console.log("Server connected to DB.");
     }
     
