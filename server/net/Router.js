@@ -4,9 +4,11 @@ var Message = require('./Message.js');
 NM_CONNECT      = 1;
 NM_LOGIN        = 2;
 NM_PLAY         = 3;
+NM_FILE         = 4;
 
-var Router = function(authModule) {
+var Router = function(authModule, fileModule) {
     this.auth = authModule;
+    this.file = fileModule;
 };
 
 var allSocks = [];
@@ -23,6 +25,8 @@ Router.prototype.process = function(sock, msg) {
             break;
         case NM_PLAY:
             break;
+        case NM_FILE:
+            this.file.onRequest(sock, msg);
         case 300:
             var r = parseInt(Math.random() * 100);
             allSocks.forEach(function(sock) {
@@ -31,6 +35,6 @@ Router.prototype.process = function(sock, msg) {
     };
 };
 
-module.exports = function(authModule) {
-    return new Router(authModule);
+module.exports = function(authModule, fileModule) {
+    return new Router(authModule, fileModule);
 };

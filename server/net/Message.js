@@ -1,20 +1,24 @@
 var binary = require('binary');
+var fs = require('fs');
 
 NM_PARAM_STRING = 1;
 NM_PARAM_INT32  = 2;
 NM_PARAM_FLOAT  = 3;
+NM_PARAM_BINARY = 4;
 
 var Message = function() {};
 Message.prototype.write = function(type, msg) {
     var keys = Object.getOwnPropertyNames(msg);
-    var paramCount = keys.length, ws, buffer = new Buffer(8 + (paramCount * 9));
+    var paramCount = keys.length, ws, buffer = new Buffer(20 + (paramCount * 9));
     var valueLengths = [];
     var values = [];
     var offset = 0;
     
-    buffer.writeUInt32LE(type, 0);
-    buffer.writeUInt32LE(paramCount, 4);
-    offset += 8;
+    buffer.writeUInt32LE(3735929054, 0);
+    buffer.writeUInt32LE(12, 4);
+    buffer.writeUInt32LE(type, 12);
+    buffer.writeUInt32LE(paramCount, 16);
+    offset += 20;
     
     i = 0;
     keys.forEach(function(k) {
@@ -27,6 +31,10 @@ Message.prototype.write = function(type, msg) {
         if (typeof msg[k] == "string") {
             valueLengths.push(msg[k].length);
             buffer.writeUInt8(NM_PARAM_STRING, offset);
+            offset += 1;
+        } else if (msg[k] instanceof Buffer) {
+            valueLengths.push(msg[k].length);
+            buffer.writeUInt8(NM_PARAM_BINARY, offset);
             offset += 1;
         } else {
             valueLengths.push(4);
@@ -53,6 +61,8 @@ Message.prototype.write = function(type, msg) {
         if (typeof v == "string") {
             vBuffer = new Buffer(v);
             buffer = Buffer.concat([buffer, vBuffer], buffer.length + vBuffer.length);
+        } else if (v instanceof Buffer) {
+            buffer = Buffer.concat([buffer, v], buffer.length + v.length);
         } else {
             vBuffer = new Buffer(4);
             vBuffer.writeFloatLE(parseFloat(v), 0);
@@ -60,6 +70,8 @@ Message.prototype.write = function(type, msg) {
         }
     });
 
+    buffer.writeUInt32LE(buffer.length-12, 8);
+    console.log('SENT: ' + buffer.toString('hex'));
     return buffer;
 };
 
@@ -67,6 +79,9 @@ Message.prototype.read = function(data) {
     var vars, i=0;
 
     vars = binary.parse(data)
+    .word32lu('x')
+    .word32lu('y')
+    .word32lu('size')
     .word32lu('messageId')
     .word32lu('paramCount')
     .loop(function(end, v) {
