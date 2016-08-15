@@ -85,5 +85,5 @@ if (!is_undefined(global.client)) {
         }
     }
    
-    network_send_raw(global.client, buffer, size);
+    network_send_packet(global.client, buffer, buffer_tell(buffer));
 }

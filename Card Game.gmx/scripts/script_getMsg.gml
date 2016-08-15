@@ -23,17 +23,30 @@ for (i=0; i < paramCount; i++) {
 }
 
 for (i=0; i < paramCount; i++) {
+    var start = buffer_tell(messageBuffer);
     var k = buffer_read(messageBuffer, buffer_text);
+    var stop = buffer_tell(messageBuffer);
+    var rewind = -(stop - start);
+    
     var keyName = string_copy(k, 0, keyLengths[| i]);
     ds_list_add(keys, keyName);
-    buffer_seek(messageBuffer, buffer_seek_relative, -string_length(k)-1+string_length(keys[| i]));
+    buffer_seek(messageBuffer, buffer_seek_relative, rewind + keyLengths[| i]);
 }
 
 for (i=0; i < paramCount; i++) {
     if (valTypes[| i] == nm_param_string) {
+        var start = buffer_tell(messageBuffer);
         var k = buffer_read(messageBuffer, buffer_text);
+        var stop = buffer_tell(messageBuffer);
+        var rewind = -(stop - start);
+    
         ds_list_add(vals, string_copy(k, 0, valLengths[| i]));
-        buffer_seek(messageBuffer, buffer_seek_relative, -string_length(k)-1+string_length(vals[| i]));
+        buffer_seek(messageBuffer, buffer_seek_relative, rewind + valLengths[| i]);
+    } else if (valTypes[| i] == nm_param_binary) {
+        var binData = buffer_create(valLengths[| i], buffer_fixed, 1);
+        buffer_copy(messageBuffer, buffer_tell(messageBuffer), valLengths[| i], binData, 0);
+        ds_list_add(vals, binData);
+        buffer_seek(messageBuffer, buffer_seek_relative, valLengths[| i]);
     } else {
         ds_list_add(vals, buffer_read(messageBuffer, buffer_f32));
     }

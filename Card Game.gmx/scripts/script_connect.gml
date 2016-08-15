@@ -7,9 +7,10 @@ if (is_undefined(global.client)) {
 //Attempt to connect
 if (!global.connected) {
     global.connecting = true;
-    var failure = network_connect_raw(global.client, network_resolve(global.serverHost), global.serverPort);
+    //var failure = network_connect_raw(global.client, network_resolve(global.serverHost), global.serverPort);
+    var conn = network_connect(global.client, global.serverHost, global.serverPort);
     
-    if (failure == 0) {
+    if (conn == 0) {
         //global.connected = true;
         var mapTest = ds_map_create();
         /*ds_map_add(mapTest, "tester1", "stringTest");

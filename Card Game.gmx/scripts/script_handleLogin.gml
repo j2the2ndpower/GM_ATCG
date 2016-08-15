@@ -10,6 +10,8 @@ if (ds_exists(data, ds_type_map)) {
         (instance_find(objMenuShop, 0)).visible = true;
         (instance_find(objMenuOptions, 0)).visible = true;
         (instance_find(objMenuExit, 0)).visible = true;
+        script_fireEvent("playerInfo", data);
+        objAvatar.visible = true;
     } else {
         show_message("Invalid login");
     }

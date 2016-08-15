@@ -71,6 +71,7 @@ if (button_owner != noone) {
         instance_destroy();
     }
 }
+window_set_cursor(cr_default);
 </string>
           </argument>
         </arguments>

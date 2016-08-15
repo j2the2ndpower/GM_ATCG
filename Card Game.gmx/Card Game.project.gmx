@@ -22,11 +22,16 @@
       <filename>cards.json</filename>
     </datafile>
   </datafiles>
-  <NewExtensions/>
+  <NewExtensions>
+    <extension index="0">extensions\Extension1</extension>
+  </NewExtensions>
   <sounds name="sound">
     <sound>sound\sound_chicken</sound>
     <sound>sound\sound3</sound>
     <sound>sound\sound2</sound>
+    <sounds name="Music">
+      <sound>sound\mp3_magicForest</sound>
+    </sounds>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sprite_blank</sprite>
@@ -37,6 +42,7 @@
       <sprite>sprites\sprite_loginButton</sprite>
       <sprite>sprites\sprite_exitButton</sprite>
       <sprite>sprites\sprite_flame</sprite>
+      <sprite>sprites\spr_avatarIcon</sprite>
     </sprites>
     <sprites name="Splash">
       <sprite>sprites\sprite_angryLogo</sprite>
@@ -47,6 +53,7 @@
       <sprite>sprites\sprite_dialogTitle</sprite>
       <sprite>sprites\sprite_closeButton</sprite>
     </sprites>
+    <sprite>sprites\spr_ui</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bgClouds</background>
@@ -71,11 +78,18 @@
       <script>scripts\script_getMsg.gml</script>
       <script>scripts\script_connected.gml</script>
       <script>scripts\script_handleLogin.gml</script>
+      <script>scripts\script_getSprite.gml</script>
+      <script>scripts\script_handleData.gml</script>
+      <script>scripts\script_handleSetAvatar.gml</script>
     </scripts>
     <script>scripts\script_exitGame.gml</script>
     <script>scripts\script_setFocus.gml</script>
     <script>scripts\script_getFocus.gml</script>
     <script>scripts\script_testClicked.gml</script>
+    <scripts name="Player">
+      <script>scripts\script_handlePlayerInfo.gml</script>
+      <script>scripts\script_handleSprite.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fntMenuItem</font>
@@ -83,6 +97,7 @@
     <font>fonts\fntDialogTitle</font>
     <font>fonts\fntDefaultTextBox</font>
     <font>fonts\fntLoginText</font>
+    <font>fonts\font_ui</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_abilityParent</object>
@@ -106,6 +121,9 @@
       <object>objects\objLoginForm</object>
       <object>objects\obj_loginButton</object>
       <object>objects\obj_exitButton</object>
+      <object>objects\objAvatar</object>
+      <object>objects\oAvatarWindow</object>
+      <object>objects\avatarIcon</object>
     </objects>
     <objects name="Splash">
       <object>objects\obj_angryLogo</object>
@@ -121,23 +139,49 @@
         <object>objects\obj_button</object>
         <object>objects\obj_dialogCloseButton</object>
         <object>objects\obj_textBox</object>
+        <object>objects\ui_defaults</object>
+        <object>objects\ui_gauge</object>
+        <object>objects\ui_keyboard</object>
+        <object>objects\ui_label</object>
+        <object>objects\ui_listbox</object>
+        <object>objects\ui_listbox_ext</object>
+        <object>objects\ui_listbox_horz</object>
+        <object>objects\ui_panel</object>
+        <object>objects\ui_slider</object>
+        <object>objects\ui_swipe</object>
+        <object>objects\ui_textani</object>
+        <object>objects\ui_textbox</object>
+        <object>objects\ui_ani_control</object>
+        <object>objects\ui_bubble</object>
+        <object>objects\ui_button</object>
+        <object>objects\ui_button_ani</object>
+        <object>objects\ui_checkbox</object>
+        <object>objects\ui_checkgroup</object>
+        <object>objects\ui_combobox</object>
+        <object>objects\ui_dialog</object>
+        <object>objects\ui_editbox</object>
+        <object>objects\ui_label_score</object>
+        <object>objects\ui_image</object>
       </objects>
     </objects>
-    <object>objects\testObject</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room_splash</room>
     <room>rooms\room_menu</room>
     <room>rooms\room_cardTable</room>
   </rooms>
-  <constants number="7">
+  <constants number="11">
     <constant name="nm_test">300</constant>
     <constant name="nm_connect">1</constant>
     <constant name="nm_login">2</constant>
     <constant name="nm_play">3</constant>
+    <constant name="nm_sprite">4</constant>
+    <constant name="nm_data">5</constant>
+    <constant name="nm_setAvatar">6</constant>
     <constant name="nm_param_string">1</constant>
     <constant name="nm_param_int32">2</constant>
     <constant name="nm_param_float">3</constant>
+    <constant name="nm_param_binary">4</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

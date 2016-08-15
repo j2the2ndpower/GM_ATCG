@@ -17,4 +17,9 @@ window_set_rectangle(0, 0, display_get_width(), display_get_height());
 display_set_gui_size(display_get_width(), display_get_height());
 global.uiFocus = noone;
 
+//Player
+global.player = undefined;
+global.dSprites = ds_map_create();
+global.waitingSpriteData = false;
+
 

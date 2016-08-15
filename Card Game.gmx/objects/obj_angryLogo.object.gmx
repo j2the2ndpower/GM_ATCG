@@ -442,6 +442,26 @@
     <event eventtype="6" enumb="50">
       <action>
         <libid>1</libid>
+        <id>212</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_end_sound</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>6</kind>
+            <sound>sound3</sound>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
         <id>222</id>
         <kind>0</kind>
         <userelative>0</userelative>
@@ -489,6 +509,26 @@ draw_sprite_ext(sprite_angryLogoText, textSubImg, x, y+halfHeight+borderWidth+(5
       </action>
     </event>
     <event eventtype="9" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>212</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_end_sound</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>6</kind>
+            <sound>sound3</sound>
+          </argument>
+        </arguments>
+      </action>
       <action>
         <libid>1</libid>
         <id>222</id>
