@@ -54,6 +54,15 @@
       <sprite>sprites\sprite_closeButton</sprite>
     </sprites>
     <sprite>sprites\spr_ui</sprite>
+    <sprites name="Board">
+      <sprite>sprites\sprDeck</sprite>
+      <sprite>sprites\sprGraveyard</sprite>
+      <sprite>sprites\sprStronghold</sprite>
+      <sprite>sprites\sprBuild</sprite>
+      <sprite>sprites\sprLeftFlank</sprite>
+      <sprite>sprites\sprRightFlank</sprite>
+      <sprite>sprites\sprForward</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bgClouds</background>
@@ -98,6 +107,8 @@
     <font>fonts\fntDefaultTextBox</font>
     <font>fonts\fntLoginText</font>
     <font>fonts\font_ui</font>
+    <font>fonts\fntBigNum</font>
+    <font>fonts\fntSmallNum</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_abilityParent</object>
@@ -163,6 +174,18 @@
         <object>objects\ui_label_score</object>
         <object>objects\ui_image</object>
       </objects>
+    </objects>
+    <objects name="Board">
+      <object>objects\oDeck</object>
+      <object>objects\oGraveyard</object>
+      <object>objects\oStronghold</object>
+      <object>objects\oBuild</object>
+      <object>objects\oLeftFlank</object>
+      <object>objects\oForward</object>
+      <object>objects\oRightFlank</object>
+      <object>objects\oBoard</object>
+      <object>objects\oHealth</object>
+      <object>objects\oActionPoints</object>
     </objects>
   </objects>
   <rooms name="rooms">
