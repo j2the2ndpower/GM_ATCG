@@ -62,6 +62,12 @@
       <sprite>sprites\sprLeftFlank</sprite>
       <sprite>sprites\sprRightFlank</sprite>
       <sprite>sprites\sprForward</sprite>
+      <sprite>sprites\sprCardBase</sprite>
+      <sprite>sprites\sprCardOverlay</sprite>
+      <sprite>sprites\sprCardArt</sprite>
+      <sprite>sprites\sprCardRarity</sprite>
+      <sprite>sprites\sprCardXPBar</sprite>
+      <sprite>sprites\sprCardXPBarFull</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -109,6 +115,10 @@
     <font>fonts\font_ui</font>
     <font>fonts\fntBigNum</font>
     <font>fonts\fntSmallNum</font>
+    <font>fonts\fntCardTitle</font>
+    <font>fonts\fntCardSubTitle</font>
+    <font>fonts\fntCardCost</font>
+    <font>fonts\fntCardSmallNum</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_abilityParent</object>
@@ -186,6 +196,7 @@
       <object>objects\oBoard</object>
       <object>objects\oHealth</object>
       <object>objects\oActionPoints</object>
+      <object>objects\oCard</object>
     </objects>
   </objects>
   <rooms name="rooms">

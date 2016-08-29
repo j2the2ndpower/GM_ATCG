@@ -63,6 +63,7 @@
     <instance objName="objAvatar" x="1856" y="0" name="inst_07D327F4" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="oAvatarWindow" x="1536" y="96" name="inst_C07B5CF5" locked="0" code="" scaleX="11" scaleY="20" colour="4294967295" rotation="0"/>
     <instance objName="ui_label" x="1568" y="128" name="inst_95206BBA" locked="0" code="uiAnchor=oAvatarWindow;&#xA;uiTextValue=&quot;Avatar&quot;;&#xA;uiTextColor=c_white;&#xA;uiBackColor2=c_black;&#xA;uiAlign=fa_center;&#xA;uiDrawOutline=1;&#xA;" scaleX="9" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="oCard" x="256" y="576" name="inst_40B5F06A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
